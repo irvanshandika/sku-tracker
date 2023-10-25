@@ -6,13 +6,15 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     'node_modules/preline/dist/*.js',
-    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'roboto': ['Roboto', 'sans-serif']
+      }
+    },
   },
   plugins: [
     require('preline/plugin'),
-    require('flowbite/plugin')
   ],
 }

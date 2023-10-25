@@ -3,7 +3,7 @@ import Logo from "@icons/Logo";
 function Navbar() {
   return (
     <>
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4">
+      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-[#D2E0FB] text-sm py-3">
         <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
           <div className="flex items-center justify-between">
             <a className="flex-none" href="#">
@@ -12,7 +12,7 @@ function Navbar() {
             <div className="sm:hidden">
               <button
                 type="button"
-                className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm"
                 data-hs-collapse="#navbar-with-collapse"
                 aria-controls="navbar-with-collapse"
                 aria-label="Toggle navigation">
@@ -27,17 +27,11 @@ function Navbar() {
           </div>
           <div id="navbar-with-collapse" className="hidden basis-full grow sm:block">
             <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-              <a className="font-medium text-blue-500" href="#" aria-current="page">
-                Landing
+              <a className="font-medium text-gray-600 hover:text-blue-500" href="#" aria-current="page" target="_blank">
+                FAQ
               </a>
-              <a className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="#">
-                Account
-              </a>
-              <a className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="#">
-                Work
-              </a>
-              <a className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500" href="#">
-                Blog
+              <a className="font-medium text-white bg-[#00A9FF] hover:bg-[#A0E9FF] px-4 py-2 rounded" href="#">
+                Login
               </a>
             </div>
           </div>

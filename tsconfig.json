@@ -24,6 +24,7 @@
       "@components/*": ["./components/*"],
       "@images/*": ["./components/images/*"],
       "@icons/*": ["./components/icons/*"],
+      "@pages/*": ["./pages/*"]
     }
   },
   "include": ["app", "components/icons/Logo.tsx"],
