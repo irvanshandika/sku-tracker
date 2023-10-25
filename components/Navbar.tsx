@@ -1,6 +1,12 @@
+import { useState } from "react";
 import Logo from "@icons/Logo";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <>
       <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-[#D2E0FB] text-sm py-3">
@@ -13,9 +19,8 @@ function Navbar() {
               <button
                 type="button"
                 className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm"
-                data-hs-collapse="#navbar-with-collapse"
-                aria-controls="navbar-with-collapse"
-                aria-label="Toggle navigation">
+                onClick={toggleMobileMenu}
+                aria-expanded={isMenuOpen}>
                 <svg className="hs-collapse-open:hidden w-4 h-4" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                 </svg>
@@ -25,7 +30,7 @@ function Navbar() {
               </button>
             </div>
           </div>
-          <div id="navbar-with-collapse" className="hidden basis-full grow sm:block">
+          <div id="navbar-with-collapse" className={`${isMenuOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
             <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
               <a className="font-medium text-gray-600 hover:text-blue-500" href="#" aria-current="page" target="_blank">
                 FAQ
