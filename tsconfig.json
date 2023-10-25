@@ -18,8 +18,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@images/*": ["./components/images/*"],
+      "@icons/*": ["./components/icons/*"],
+    }
   },
-  "include": ["src"],
+  "include": ["app", "components/icons/Logo.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
