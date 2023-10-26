@@ -1,6 +1,7 @@
 import Logo from "@icons/Logo";
 
 function Footer() {
+  const year = new Date().getFullYear();
   return (
     <>
       <footer className="bg-[#D2E0FB] text-center text-xs p-3 absolute bottom-0 w-full">
@@ -14,12 +15,13 @@ function Footer() {
           <div className="mt-3">
             <p className="text-gray-500">
               We're part of the{" "}
-              <a className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400" href="#">
-                Htmlstream
+              <a className="font-semibold hover:text-blue-700 dark:hover:text-blue-400" href="#">
+                S<span className="text-blue-500">K</span>U! Tracker
               </a>{" "}
-              family.
             </p>
-            <p className="text-gray-500">© Preline. 2022 Htmlstream. All rights reserved.</p>
+            <p className="text-gray-500 font-bold">
+              &copy; {year} S<span className="text-blue-500">K</span>U! Team. All rights reserved.
+            </p>
           </div>
           <div className="mt-3 space-x-2">
             <a
