@@ -32,7 +32,7 @@ function Navbar() {
           </div>
           <div id="navbar-with-collapse" className={`${isMenuOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
             <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-              <a className="font-medium text-gray-600 hover:text-blue-500" href="#" aria-current="page" target="_blank">
+              <a className="font-medium text-gray-600 hover:text-blue-500" href="/faq" aria-current="page" target="_blank">
                 FAQ
               </a>
               <a className="font-medium text-white bg-[#00A9FF] hover:bg-[#A0E9FF] px-4 py-2 rounded" href="#">
