@@ -12,7 +12,7 @@ function Navbar() {
       <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-[#D2E0FB] text-sm py-3">
         <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
           <div className="flex items-center justify-between">
-            <a className="flex-none" href="#">
+            <a className="flex-none" href="/">
               <Logo />
             </a>
             <div className="sm:hidden">
