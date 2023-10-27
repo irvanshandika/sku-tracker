@@ -1,52 +1,60 @@
 import React, { useState } from "react";
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import Modal from "@components/Modal";
+import Logo from "@icons/Logo";
 
 const FAQPages: React.FC = () => {
-  const faqItems: FAQItem[] = [
+  const [faqs] = useState([
     {
-      question: "Apa itu React?",
-      answer: "React adalah perpustakaan JavaScript untuk membangun antarmuka pengguna.",
+      question: "Apa itu SKU! Tracker ?",
+      answer: "SKU! Tracker merupakan aplikasi manajemen pendidikan untuk melacak kegiatan pelajar, penilaian, dan presensi.",
     },
     {
-      question: "Apa itu TypeScript?",
-      answer: "TypeScript adalah bahasa pemrograman yang mendukung tipe statis dan dikembangkan oleh Microsoft.",
+      question: "Seberapa aman data saya ?",
+      answer: "Data Anda sangat aman. Kami menggunakan teknologi enkripsi untuk melindungi data Anda.",
     },
     {
-      question: "Apa itu Tailwind CSS?",
-      answer: "Tailwind CSS adalah kerangka kerja CSS yang memungkinkan Anda untuk merancang antarmuka web dengan cepat.",
+      question: "Bagaimana cara mengakses aplikasi ini ?",
+      answer: "Anda dapat mengakses aplikasi ini melalui browser di perangkat Anda.",
     },
-  ];
+    {
+      question: "Apakah saya dapat mengakses aplikasi ini di perangkat mobile ?",
+      answer: "Ya, Anda dapat mengakses aplikasi ini di perangkat mobile ataupun desktop.",
+    },
+  ]);
 
-  const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const [modalContent, setModalContent] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalQuestion, setModalQuestion] = useState("");
 
-  const toggleItem = (question: string) => {
-    if (expandedItem === question) {
-      setExpandedItem(null);
-    } else {
-      setExpandedItem(question);
-    }
+  const handleQuestionClick = (question: string, answer: string) => {
+    setModalContent(answer);
+    setModalQuestion(question);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
-      <div className="max-w-md mx-auto">
-        <h1 className="text-3xl font-semibold text-center mb-4">Pertanyaan Umum</h1>
-        <div>
-          {faqItems.map((item, index) => (
-            <div key={index} className="mb-4">
-              <button className="flex justify-between items-center w-full p-2 rounded-md bg-gray-200 hover:bg-gray-300" onClick={() => toggleItem(item.question)}>
-                <span>{item.question}</span>
-                <span>{expandedItem === item.question ? "▲" : "▼"}</span>
-              </button>
-              {expandedItem === item.question && <div className="p-4 bg-gray-100">{item.answer}</div>}
-            </div>
-          ))}
+    <div className="bg-gray-100 min-h-screen p-8">
+      <div className="max-w-xl mx-auto">
+        <div className="grid justify-center">
+          <div className="flex justify-center">
+            <Logo />
+          </div>
+          <h1 className="text-3xl font-semibold mb-4">FAQ'S</h1>
         </div>
+        {faqs.map((faq, index) => (
+          <div key={index} className="mb-4 p-4 bg-white shadow-md rounded">
+            <button className="w-full text-left font-semibold" onClick={() => handleQuestionClick(faq.question, faq.answer)}>
+              {faq.question}
+            </button>
+          </div>
+        ))}
       </div>
+
+      <Modal isOpen={isModalOpen} question={modalQuestion} content={modalContent} onClose={closeModal} />
     </div>
   );
 };
