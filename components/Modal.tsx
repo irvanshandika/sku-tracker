@@ -17,7 +17,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, content, question, onClose }) => 
         <h2 className="text-2xl font-semibold mb-2 text-center">{question}</h2>
         <div className="text-gray-800">{content}</div>
         <button onClick={onClose} className="mt-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
-          Tutup
+          Mengerti
         </button>
       </div>
     </div>
