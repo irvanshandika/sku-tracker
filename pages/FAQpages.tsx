@@ -18,7 +18,7 @@ const FAQPages: React.FC = () => {
     },
     {
       question: "Apakah saya dapat mengakses aplikasi ini di perangkat mobile ?",
-      answer: "Ya, Anda dapat mengakses aplikasi ini di perangkat mobile ataupun desktop.",
+      answer: "Ya, Anda dapat mengakses aplikasi ini di perangkat mobile atau pun desktop.",
     },
   ]);
 

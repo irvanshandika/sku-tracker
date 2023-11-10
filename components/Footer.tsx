@@ -2,7 +2,7 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <>
-      <footer className="bg-[#D2E0FB] rounded-lg shadow mx-4 mt-[120px]">
+      <footer className="bg-[#D2E0FB] rounded-lg shadow lg:mx-4 mx-2">
         <div className="w-full mx-auto font-bold max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-500 sm:text-center">
             © 2023 ~ {year}{" "}

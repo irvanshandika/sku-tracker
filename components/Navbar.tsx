@@ -11,7 +11,7 @@ function Navbar() {
   };
   return (
     <>
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 mx-4 rounded-lg bg-[#D2E0FB] text-sm py-3 mt-2">
+      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 lg:mx-4 mx-2 rounded-lg bg-[#D2E0FB] text-sm py-3 mt-2">
         <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
           <div className="flex items-center justify-between">
             <a className="flex-none" href="/">
