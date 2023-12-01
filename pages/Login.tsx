@@ -23,10 +23,10 @@ const Login: React.FC<LoginProps> = () => {
   };
 
   return (
-    <div className="flex w-full max-w-sm mx-auto my-20 overflow-hidden bg-white rounded-lg shadow-lg lg:max-w-4xl">
+    <div className="flex w-full max-w-sm mx-auto my-20 overflow-hidden bg-white border-2 border-gray-700 rounded-lg shadow-lg lg:max-w-4xl">
       <div
         className="hidden bg-cover lg:block lg:w-1/2"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')" }}></div>
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1666054450648-fa55775bb048?q=80&w=1575&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
 
       <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
         <div className="flex justify-center mx-auto">
