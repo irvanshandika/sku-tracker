@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
-import { IonIcon } from "@ionic/react";
+import Logo from "@icons/Logo";
 
 interface LoginProps {}
 
@@ -23,105 +23,99 @@ const Login: React.FC<LoginProps> = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <div className="text-center">
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Welcome Back!</h2>
-            <p className="mt-2 text-center text-sm text-gray-600">Please sign in to your account</p>
+    <div className="flex w-full max-w-sm mx-auto my-20 overflow-hidden bg-white rounded-lg shadow-lg lg:max-w-4xl">
+      <div
+        className="hidden bg-cover lg:block lg:w-1/2"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')" }}></div>
+
+      <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
+        <div className="flex justify-center mx-auto">
+          <Logo />
+        </div>
+
+        <p className="mt-3 text-xl text-center text-gray-600">Welcome back!</p>
+
+        <a href="#" className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg hover:bg-gray-200">
+          <div className="px-4 py-2">
+            <svg className="w-6 h-6" viewBox="0 0 40 40">
+              <path
+                d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                fill="#FFC107"
+              />
+              <path
+                d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z"
+                fill="#FF3D00"
+              />
+              <path
+                d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z"
+                fill="#4CAF50"
+              />
+              <path
+                d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                fill="#1976D2"
+              />
+            </svg>
           </div>
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            <input type="hidden" name="remember" defaultValue="true" />
-            <div className="rounded-md shadow-sm -space-y-px">
-              <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={handleEmailChange}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Email address"
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={handlePasswordChange}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
+
+          <span className="w-5/6 px-4 py-3 font-bold text-center">Sign in with Google</span>
+        </a>
+
+        <div className="flex items-center justify-between mt-4">
+          <span className="w-1/5 border-b lg:w-1/4"></span>
+
+          <a href="#" className="text-xs text-center text-gray-500 uppercase hover:underline">
+            or login with email
+          </a>
+
+          <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mt-4">
+            <label className="block mb-2 text-sm font-medium text-gray-600" htmlFor="LoggingEmailAddress">
+              Email Address
+            </label>
+            <input
+              id="LoggingEmailAddress"
+              className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+
+          <div className="mt-4">
+            <div className="flex justify-between">
+              <label className="block mb-2 text-sm font-medium text-gray-600" htmlFor="loggingPassword">
+                Password
+              </label>
+              <a href="#" className="text-xs text-gray-500 hover:underline">
+                Forget Password?
+              </a>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  Remember me
-                </label>
-              </div>
+            <input
+              id="loggingPassword"
+              className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
 
-              <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Forgot your password?
-                </a>
-              </div>
-            </div>
+          <div className="mt-6">
+            <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+              Sign In
+            </button>
+          </div>
+        </form>
+        <div className="flex items-center justify-between mt-4">
+          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
 
-            <div>
-              <button
-                type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <span className="absolute left-0 inset-y-0 flex items-center pl-32">
-                  <IonIcon icon="log-in" className="w-5 h-5"></IonIcon>
-                </span>
-                Sign in
-              </button>
-            </div>
-            <div className="mt-4 text-sm text-center">
-              <span className="font-medium text-gray-600">Or sign in with</span>
-            </div>
-            <div className="mt-4 flex justify-center space-x-4">
-              <button
-                type="button"
-                disabled
-                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM17.646 10.353L12.707 10.353L12.707 7.293C12.707 6.779 12.309 6.353 11.795 6.353C11.281 6.353 10.883 6.779 10.883 7.293L10.883 10.353L6.354 10.353C5.84 10.353 5.414 10.749 5.414 11.263C5.414 11.777 5.84 12.202 6.354 12.202L10.883 12.202L10.883 15.263C10.883 15.777 11.281 16.202 11.795 16.202C12.309 16.202 12.707 15.777 12.707 15.263L12.707 12.202L17.646 12.202C18.16 12.202 18.586 11.777 18.586 11.263C18.586 10.749 18.16 10.353 17.646 10.353Z"></path>
-                </svg>
-                Google
-              </button>
-              <button
-                type="button"
-                disabled
-                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM16.5 12.75L12.75 12.75L12.75 16.5C12.75 16.914 12.414 17.25 12 17.25C11.586 17.25 11.25 16.914 11.25 16.5L11.25 12.75L7.5 12.75C7.086 12.75 6.75 12.414 6.75 12C6.75 11.586 7.086 11.25 7.5 11.25L11.25 11.25L11.25 7.5C11.25 7.086 11.586 6.75 12 6.75C12.414 6.75 12.75 7.086 12.75 7.5L12.75 11.25L16.5 11.25C16.914 11.25 17.25 11.586 17.25 12C17.25 12.414 16.914 12.75 16.5 12.75Z"></path>
-                </svg>
-                Apple
-              </button>
-            </div>
-          </form>
+          <a href="#" className="text-xs text-gray-500 uppercase hover:underline">
+            or sign up
+          </a>
+
+          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
         </div>
       </div>
     </div>
